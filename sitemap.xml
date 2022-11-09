@@ -40,6 +40,13 @@
 
   
   <url>
+    <loc>https://yrmkye.github.io/blog/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</loc>
+    <lastmod>2022-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://yrmkye.github.io/blog/categories/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -55,13 +62,6 @@
   
   <url>
     <loc>https://yrmkye.github.io/blog/categories/%E6%97%A5%E5%BF%97/</loc>
-    <lastmod>2022-11-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yrmkye.github.io/blog/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
