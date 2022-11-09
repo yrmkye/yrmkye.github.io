@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://yrmkye.github.io/categories/index.html</loc>
+    <loc>https://yrmkye.github.io/blog/categories/index.html</loc>
     
     <lastmod>2022-05-16</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://yrmkye.github.io/about/index.html</loc>
+    <loc>https://yrmkye.github.io/blog/about/index.html</loc>
     
     <lastmod>2022-05-16</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://yrmkye.github.io/2022/05/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://yrmkye.github.io/blog/2022/05/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</loc>
     
     <lastmod>2022-05-16</lastmod>
     
@@ -30,7 +30,7 @@
   
 
   <url>
-    <loc>https://yrmkye.github.io/</loc>
+    <loc>https://yrmkye.github.io/blog</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -40,28 +40,28 @@
 
   
   <url>
-    <loc>https://yrmkye.github.io/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</loc>
+    <loc>https://yrmkye.github.io/blog/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yrmkye.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://yrmkye.github.io/blog/categories/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yrmkye.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/</loc>
+    <loc>https://yrmkye.github.io/blog/categories/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yrmkye.github.io/categories/%E6%97%A5%E5%BF%97/</loc>
+    <loc>https://yrmkye.github.io/blog/categories/%E6%97%A5%E5%BF%97/</loc>
     <lastmod>2022-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

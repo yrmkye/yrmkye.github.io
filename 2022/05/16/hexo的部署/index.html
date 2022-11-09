@@ -5,52 +5,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 6.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/blog/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
-  <script src="/lib/pace/pace.min.js"></script>
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yrmkye.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.jons"};
+    var CONFIG = {"hostname":"yrmkye.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.jons"};
   </script>
 
   <meta name="description" content="教你如何搭建自己的博客">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo的部署">
-<meta property="og:url" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/index.html">
+<meta property="og:url" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="袁冥夜的个人博客">
 <meta property="og:description" content="教你如何搭建自己的博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E5%8F%B3%E9%94%AE.png">
-<meta property="og:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E5%8F%B3%E9%94%AE.png">
-<meta property="og:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E7%89%88%E6%9C%AC%E5%8F%B7.png">
-<meta property="og:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516163807910.png">
-<meta property="og:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516164249077.png">
-<meta property="og:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516164436938.png">
-<meta property="og:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516171151610.png">
-<meta property="og:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516171457192.png">
-<meta property="og:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516172302010.png">
-<meta property="og:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516172424559.png">
-<meta property="og:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516173637917.png">
-<meta property="og:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516173947872.png">
-<meta property="og:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516173400462.png">
-<meta property="og:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516174443121.png">
-<meta property="og:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516174238622.png">
+<meta property="og:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E5%8F%B3%E9%94%AE.png">
+<meta property="og:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E5%8F%B3%E9%94%AE.png">
+<meta property="og:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E7%89%88%E6%9C%AC%E5%8F%B7.png">
+<meta property="og:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516163807910.png">
+<meta property="og:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516164249077.png">
+<meta property="og:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516164436938.png">
+<meta property="og:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516171151610.png">
+<meta property="og:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516171457192.png">
+<meta property="og:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516172302010.png">
+<meta property="og:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516172424559.png">
+<meta property="og:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516173637917.png">
+<meta property="og:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516173947872.png">
+<meta property="og:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516173400462.png">
+<meta property="og:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516174443121.png">
+<meta property="og:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516174238622.png">
 <meta property="article:published_time" content="2022-05-16T02:19:46.000Z">
 <meta property="article:modified_time" content="2022-05-16T23:19:04.000Z">
 <meta property="article:author" content="袁冥夜">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E5%8F%B3%E9%94%AE.png">
+<meta name="twitter:image" content="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E5%8F%B3%E9%94%AE.png">
 
-<link rel="canonical" href="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/">
+<link rel="canonical" href="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/">
 
 
 <script id="page-configurations">
@@ -112,7 +112,7 @@
 
   <div class="site-meta">
 
-    <a href="/" class="brand" rel="start">
+    <a href="/blog/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">袁冥夜的个人博客</h1>
       <span class="logo-line-after"><i></i></span>
@@ -134,22 +134,22 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -210,10 +210,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://yrmkye.github.io/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/">
+    <link itemprop="mainEntityOfPage" href="https://yrmkye.github.io/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
       <meta itemprop="name" content="袁冥夜">
       <meta itemprop="description" content="万物皆虚，万事皆允">
     </span>
@@ -248,7 +248,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
+                  <a href="/blog/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
                 </span>
             </span>
 
@@ -261,8 +261,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/" itemprop="commentCount"></span>
+    <a title="valine" href="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -285,29 +285,29 @@
 <p>你可以去官网下载最新版，也可以从这里下载我使用的  链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1VGqk4-pfD-0Efn0zGmHePw?pwd=uv1e">https://pan.baidu.com/s/1VGqk4-pfD-0Efn0zGmHePw?pwd=uv1e</a> 提取码: uv1e </p>
 <h1 id="三、安装"><a href="#三、安装" class="headerlink" title="三、安装"></a>三、安装</h1><p>Nodejs，Git 直接运行安装包即可，注意安装路径</p>
 <h2 id="1-安装cnpm"><a href="#1-安装cnpm" class="headerlink" title="1.安装cnpm"></a>1.安装cnpm</h2><p>Nodejs，Git 安装好后直接在桌面右键，选择<code>Git Bash Here</code></p>
-<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E5%8F%B3%E9%94%AE.png"></p>
+<p><img src="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E5%8F%B3%E9%94%AE.png"></p>
 <p>在Git Bash里面执行下面的命令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
 <h2 id="2-验证"><a href="#2-验证" class="headerlink" title="2.验证"></a>2.验证</h2><p>Nodejs，Git，Sublime Text安装好后验证</p>
 <p>直接在桌面右键，选择Git Bash Here</p>
-<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E5%8F%B3%E9%94%AE.png"></p>
+<p><img src="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E5%8F%B3%E9%94%AE.png"></p>
 <p>依次输入 <code>node -v </code>，<code> npm -v</code>，<code>cnpm -v</code></p>
 <p>显示出版本号证明安装成功</p>
-<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E7%89%88%E6%9C%AC%E5%8F%B7.png"></p>
+<p><img src="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E7%89%88%E6%9C%AC%E5%8F%B7.png"></p>
 <h2 id="3-安装并初始化hexo"><a href="#3-安装并初始化hexo" class="headerlink" title="3.安装并初始化hexo"></a>3.安装并初始化hexo</h2><p>选择一个你喜欢的文件夹当做博客的根目录，在里面右键打开Git Bash</p>
 <p>比如我选择的是D盘的blog文件</p>
 <p>这里会显示你当前的目录</p>
-<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516163807910.png"></p>
+<p><img src="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516163807910.png"></p>
 <p>执行这个命令来安装Hexo</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 
 <p>完成后执行 <code>hexo init</code></p>
 <p>等这个命令执行完毕后，再执行 <code>hexo s</code></p>
-<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516164249077.png" alt="image-20220516164249077"></p>
+<p><img src="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516164249077.png" alt="image-20220516164249077"></p>
 <p>出现这个界面后打开http开头4000结尾的网址</p>
 <p>就能看见再本地初始化后的Hexo博客了</p>
-<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516164436938.png" alt="image-20220516164436938"></p>
+<p><img src="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516164436938.png" alt="image-20220516164436938"></p>
 <p>注：截图会与你的实际界面有出入，应为这是我修改配置后的界面</p>
 <p>到这里你只能在自己的电脑上浏览博客，接下来就是在其他设备上也能看到</p>
 <h1 id="四、部署"><a href="#四、部署" class="headerlink" title="四、部署"></a>四、部署</h1><p>你有两个选择</p>
@@ -316,8 +316,8 @@
 <p>因为我用的是github平台，所以只介绍部署在github上的方法。</p>
 <h2 id="1-注册"><a href="#1-注册" class="headerlink" title="1.注册"></a>1.注册</h2><p><a target="_blank" rel="noopener" href="https://github.com/">GitHub：世界构建软件的地方 ·GitHub</a></p>
 <p>注册过程就不教了，看不懂的开翻译就行</p>
-<h2 id="2-创建仓库"><a href="#2-创建仓库" class="headerlink" title="2.创建仓库"></a>2.创建仓库</h2><p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516171151610.png" alt="image-20220516171151610"></p>
-<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516171457192.png" alt="image-20220516171457192"></p>
+<h2 id="2-创建仓库"><a href="#2-创建仓库" class="headerlink" title="2.创建仓库"></a>2.创建仓库</h2><p><img src="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516171151610.png" alt="image-20220516171151610"></p>
+<p><img src="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516171457192.png" alt="image-20220516171457192"></p>
 <p>仓库名那里结尾必须添加 <code>github.io</code></p>
 <p>比如我的就是 <code>yrmkye.github.io</code></p>
 <h2 id="3-秘钥"><a href="#3-秘钥" class="headerlink" title="3.秘钥"></a>3.秘钥</h2><p>打开Git Bash 执行命令</p>
@@ -332,8 +332,8 @@
 
 <p>会出现一大串字符，那就是你的秘钥，复制下来保存好</p>
 <p>回到github点击你的头像选择Settings</p>
-<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516172302010.png" alt="image-20220516172302010"></p>
-<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516172424559.png" alt="image-20220516172424559"></p>
+<p><img src="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516172302010.png" alt="image-20220516172302010"></p>
+<p><img src="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516172424559.png" alt="image-20220516172424559"></p>
 <p>然后再在Git Bash里执行</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
@@ -341,19 +341,19 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Are you sure you want to continue connecting (yes/no/[fingerprint])? </span><br></pre></td></tr></table></figure>
 
 <h2 id="4-上传"><a href="#4-上传" class="headerlink" title="4.上传"></a>4.上传</h2><p>回到github，设置里面修改，把main修改为master</p>
-<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516173637917.png" alt="image-20220516173637917"></p>
+<p><img src="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516173637917.png" alt="image-20220516173637917"></p>
 <p>打开你的仓库，复制git开头的地址</p>
-<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516173947872.png" alt="image-20220516173947872"></p>
+<p><img src="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516173947872.png" alt="image-20220516173947872"></p>
 <p>打开你保存站点的文件夹里的 <code>_config.yml</code></p>
-<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516173400462.png" alt="image-20220516173400462"></p>
+<p><img src="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516173400462.png" alt="image-20220516173400462"></p>
 <p>在开头找到并修改</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">url: https://你的仓库名/blog</span><br><span class="line">root: /blog</span><br></pre></td></tr></table></figure>
 
-<p>例如：<img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516174443121.png" alt="image-20220516174443121"></p>
+<p>例如：<img src="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516174443121.png" alt="image-20220516174443121"></p>
 <p>在下面找到并修改</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: 你复制的地址</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
-<p>例如：<img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516174238622.png" alt="image-20220516174238622"></p>
+<p>例如：<img src="/blog/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516174238622.png" alt="image-20220516174238622"></p>
 <p>修改好后保存退出</p>
 <p>在你的博客根目录里打开Git Bash</p>
 <p>依次执行命令</p>
@@ -386,11 +386,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/05/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" rel="prev" title="第一篇博客">
+    <a href="/blog/2022/05/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" rel="prev" title="第一篇博客">
       <i class="fa fa-chevron-left"></i> 第一篇博客
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/05/16/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/" rel="next" title="更新日志">
+    <a href="/blog/2022/05/16/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/" rel="next" title="更新日志">
       更新日志 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -464,7 +464,7 @@
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+          <a href="/blog/archives/">
         
           <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
@@ -537,31 +537,31 @@
   </div>
 
   
-  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="/blog/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
 
-<script src="/js/utils.js"></script>
+<script src="/blog/js/utils.js"></script>
 
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
+<script src="/blog/js/motion.js"></script>
 
 
-<script src="/js/next-boot.js"></script>
+<script src="/blog/js/schemes/pisces.js"></script>
 
 
-
-
-  
+<script src="/blog/js/next-boot.js"></script>
 
 
 
 
   
-<script src="/js/local-search.js"></script>
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
 
 
 
