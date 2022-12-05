@@ -422,6 +422,30 @@
       </categories>
   </entry>
   <entry>
+    <title>第一篇博客</title>
+    <url>/2022/05/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>花了四五个小时终于部署好了博客，这里会记录我的学习过程，等下会将hexo的部署过程发上来</p>
+]]></content>
+      <categories>
+        <category>日志</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>更新日志</title>
+    <url>/2022/05/16/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</url>
+    <content><![CDATA[<h6 id="2022年5月16日21-55-21"><a href="#2022年5月16日21-55-21" class="headerlink" title="2022年5月16日21:55:21"></a>2022年5月16日21:55:21</h6><p>添加了github主页的跳转</p>
+<p>页面顶部添加了阅读进度条</p>
+<p>删除了不必要的评论区</p>
+<h6 id="2022年5月16日21-13-38"><a href="#2022年5月16日21-13-38" class="headerlink" title="2022年5月16日21:13:38"></a>2022年5月16日21:13:38</h6><p>添加了分类，移除了标签</p>
+<p>添加了计数器</p>
+<h6 id="2022年5月16日20-36-22"><a href="#2022年5月16日20-36-22" class="headerlink" title="2022年5月16日20:36:22"></a>2022年5月16日20:36:22</h6><p>添加了搜索功能</p>
+<p>添加 了评论功能  </p>
+]]></content>
+      <categories>
+        <category>博客日志</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hexo的部署</title>
     <url>/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>博客，可以看做一个放在网上的日记本，你可以随意的设计属于你的博客。创建博客并不难，其大部分时间全是在等待上（毕竟是国外网站）。这一篇讲的是如何在Github上部署Hexo博客，仅适用于Windows系统。</p>
@@ -523,21 +547,6 @@
       </categories>
   </entry>
   <entry>
-    <title>更新日志</title>
-    <url>/2022/05/16/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</url>
-    <content><![CDATA[<h6 id="2022年5月16日21-55-21"><a href="#2022年5月16日21-55-21" class="headerlink" title="2022年5月16日21:55:21"></a>2022年5月16日21:55:21</h6><p>添加了github主页的跳转</p>
-<p>页面顶部添加了阅读进度条</p>
-<p>删除了不必要的评论区</p>
-<h6 id="2022年5月16日21-13-38"><a href="#2022年5月16日21-13-38" class="headerlink" title="2022年5月16日21:13:38"></a>2022年5月16日21:13:38</h6><p>添加了分类，移除了标签</p>
-<p>添加了计数器</p>
-<h6 id="2022年5月16日20-36-22"><a href="#2022年5月16日20-36-22" class="headerlink" title="2022年5月16日20:36:22"></a>2022年5月16日20:36:22</h6><p>添加了搜索功能</p>
-<p>添加 了评论功能  </p>
-]]></content>
-      <categories>
-        <category>博客日志</category>
-      </categories>
-  </entry>
-  <entry>
     <title>题库及算法</title>
     <url>/2022/11/27/%E9%A2%98%E5%BA%93%E5%8F%8A%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>代码不唯一,不一定最优,不一定正确,有问题及时联系我更正.</p>
@@ -566,7 +575,7 @@
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sj</span><span class="params">(<span class="type">int</span> h, <span class="type">int</span> j)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (j == <span class="number">1</span>||j==h||h==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> sj(h - <span class="number">1</span>,j<span class="number">-1</span>)+sj(h<span class="number">-1</span>,j);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> h = <span class="number">0</span>;</span><br><span class="line">	scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;h);<span class="comment">//输入指定的行数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= h; j++)</span><br><span class="line">		 <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, sj(h, j));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="-8"><a href="#-8" class="headerlink" title=""></a></h2><p>给定三个六面的骰子,随机投掷,其中两个骰子点数之和为第三个骰子点数的概率为多少,用最简分式表示</p>
-<p>根据题意找出规律课推广到三个任意面的骰子</p>
+<p>根据题意找出规律可推广到三个任意面的骰子</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> N  6 <span class="comment">//骰子的面数</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">yt</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;<span class="comment">//辗转相除法求最大公约数</span></span><br><span class="line">	<span class="keyword">if</span> (a % b == <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> b;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> yt(b, a % b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> fm = <span class="built_in">pow</span>(N, <span class="number">3</span>);<span class="comment">//骰子一共会出现的所有组合数,N*N*N</span></span><br><span class="line">	<span class="type">int</span> fz = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//当骰子为5面时,符合要求的组合数量为(1+2+3+4)*3=(5+5)*3=30</span></span><br><span class="line">	<span class="comment">//当骰子为6面时,符合要求的组合数量为(1+2+3+4+5)*3=(6+6+3)*3=45</span></span><br><span class="line">	<span class="comment">//当骰子为7面时,符合要求的组合数量为(1+2+3+4+5+6)*3=(7+7+7)*3=63</span></span><br><span class="line">	<span class="comment">//当骰子为8面时,符合要求的组合数量为(1+2+3+4+5+6+7)*3=(8+8+8+4)*3=84</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; N ; i++) &#123;</span><br><span class="line">		fz = fz + (i * <span class="number">3</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> y = yt(fm, fz);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d/%d&quot;</span>, fz/y, fm/y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -576,14 +585,5 @@
 <h2 id="欧拉筛-素数"><a href="#欧拉筛-素数" class="headerlink" title="欧拉筛(素数)"></a>欧拉筛(素数)</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> N 100<span class="comment">//范围</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> P 25<span class="comment">//个数</span></span></span><br><span class="line"><span class="comment">//一百内有25个素数,则素数盒子长度最少为25</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="type">int</span> Prime[P] = &#123; <span class="number">0</span> &#125;;<span class="comment">//存放P个素数</span></span><br><span class="line">	<span class="type">int</span> isPrime[N] = &#123;<span class="number">0</span>&#125;;<span class="comment">//素数筛的范围</span></span><br><span class="line">	<span class="type">int</span> cot = <span class="number">0</span>;<span class="comment">//记录找到了多少个素数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt; N; i++) &#123;<span class="comment">//从2到N-1</span></span><br><span class="line">		<span class="keyword">if</span> (!isPrime[i]) &#123;<span class="comment">//如果i是素数,就把i存入Prime</span></span><br><span class="line">			Prime[cot] = i;</span><br><span class="line">			cot++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; cot &amp;&amp; Prime[j]*i  &lt; N;j++) &#123;<span class="comment">//Prime[j]*i&lt;N 确保在范围N内</span></span><br><span class="line"> 			isPrime[i * Prime[j]] = <span class="number">1</span>;<span class="comment">//将已找到的素数的i倍数筛掉</span></span><br><span class="line">			<span class="keyword">if</span> (i % Prime[j] == <span class="number">0</span>)<span class="keyword">break</span>;<span class="comment">//如果i能被已有的素数整除,说明已经被筛过,就跳过不再筛</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; cot; i++) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, Prime[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>第一篇博客</title>
-    <url>/2022/05/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>花了四五个小时终于部署好了博客，这里会记录我的学习过程，等下会将hexo的部署过程发上来</p>
-]]></content>
-      <categories>
-        <category>日志</category>
-      </categories>
   </entry>
 </search>
