@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Python学习日记</title>
+    <url>/2022/05/19/Python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="2022年09月23日"><a href="#2022年09月23日" class="headerlink" title="2022年09月23日"></a>2022年09月23日</h1><p>创建和删除列表</p>
+<p><img src="/2022/05/19/Python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/%E5%88%9B%E5%BB%BA%E5%92%8C%E5%88%A0%E9%99%A4%E5%88%97%E8%A1%A8.png"></p>
+<h1 id="2022年6月27日"><a href="#2022年6月27日" class="headerlink" title="2022年6月27日"></a>2022年6月27日</h1><p>序列主要有:列表,元组,集合,字典,字符串<br>序列的切片:<code>序列[start:end:step]</code><br>steat;切片开始的位置(包含),默认为0<br>end:切片结束的位置(不包含).默认为序列长度<br>step:步长,默认为1,使用默认时可以省略最后一个冒号</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">s = &#x27;0123456789&#x27;  # 该字符串的长度为10,最后一位的序号为9</span><br><span class="line">print(s[1:10:2])</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">13579</span><br></pre></td></tr></table></figure>
+<p>序列可以和序列相加,但是序列的数据类型必须相同<br>序列可以和数字相乘</p>
+<p>序列的操作符<br><img src="/2022/05/19/Python%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/%E5%BA%8F%E5%88%97%E7%9A%84%E6%93%8D%E4%BD%9C%E7%AC%A6.png"></p>
+<h1 id="2022年6月26日"><a href="#2022年6月26日" class="headerlink" title="2022年6月26日"></a>2022年6月26日</h1><p>打印菱形块</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 打印菱形</span><br><span class="line">row = eval(input(&quot;请输入行数:&quot;))</span><br><span class="line">while row % 2 == 0:</span><br><span class="line">    print(&quot;请输入奇数&quot;)</span><br><span class="line">    row = eval(input(&quot;请输入行数:&quot;))</span><br><span class="line"># 上半部分</span><br><span class="line">up_row = int((row + 1) / 2)  # 行数</span><br><span class="line">for i in range(1, up_row + 1):  # 几行循环几次</span><br><span class="line">    for j in range(1, up_row + 1 - i):  # 每一行打印多少个空格</span><br><span class="line">        print(&quot; &quot;, end=&quot;&quot;)</span><br><span class="line">    for k in range(1, i * 2):  # 每一行打印多少个*</span><br><span class="line">        if k == 1 or k == i * 2 - 1:  # 空心</span><br><span class="line">            print(&quot;*&quot;, end=&quot;&quot;)</span><br><span class="line">        else:</span><br><span class="line">            print(&quot; &quot;, end=&quot;&quot;)</span><br><span class="line">    print()  # 换行</span><br><span class="line"># 下半部分</span><br><span class="line">d_row = row - up_row  # 行数</span><br><span class="line">for i in range(1, d_row + 1):  # 几行循环几次</span><br><span class="line">    for j in range(1, i + 1):  # 每一行打印多少个空格</span><br><span class="line">        print(&quot; &quot;, end=&quot;&quot;)</span><br><span class="line">    for k in range(1, 2 * (d_row - i + 1)):  # 每一行打印多少个*</span><br><span class="line">        print(&quot;*&quot;, end=&quot;&quot;)  # 实心</span><br><span class="line">    print()  # 换行</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">请输入行数:7</span><br><span class="line">   *</span><br><span class="line">  * *</span><br><span class="line"> *   *</span><br><span class="line">*     *</span><br><span class="line"> *****</span><br><span class="line">  ***</span><br><span class="line">   *</span><br></pre></td></tr></table></figure>
+
+<p>程序跳转语句 只能在循环结构里使用,一般搭配if一起用<br>break 直接跳出并结束循环<br>continue 直结束本轮循环继续下一轮</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">i = 0</span><br><span class="line">while 1:  # 死循环</span><br><span class="line">    print(i)  # 打印i的值</span><br><span class="line">    i += 1  # i自加1</span><br><span class="line">    if i == 2:  # 当i==2时,加2并退出本轮循环</span><br><span class="line">        i += 2</span><br><span class="line">        print(&quot;continue生效&quot;)</span><br><span class="line">        continue</span><br><span class="line">    if i == 6:  # 当i==6时退出循环</span><br><span class="line">        print(&quot;break生效&quot;)</span><br><span class="line">        break</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">continue生效</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">break生效</span><br></pre></td></tr></table></figure>
+<p>结束的是当前级别的循环,无法结束父级循环</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for j in range(1, 4):  # 有限的for循环</span><br><span class="line">    i = 0</span><br><span class="line">    while 1:  # 无限的while循环</span><br><span class="line">        i += 1  # 计数器自加</span><br><span class="line">        if i == 2:  # break的生效条件</span><br><span class="line">            print(i, &quot;break生效&quot;)</span><br><span class="line">            break</span><br><span class="line">    print(&quot;循环次数:&quot;, j)  # for循环的次数</span><br><span class="line">print(&quot;for结束&quot;)</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">2 break生效</span><br><span class="line">循环次数: 1</span><br><span class="line">2 break生效</span><br><span class="line">循环次数: 2</span><br><span class="line">2 break生效</span><br><span class="line">循环次数: 3</span><br><span class="line">for结束</span><br></pre></td></tr></table></figure>
+<p>pass语句 只占一个位置,不作任何事情,可以让语法结构完整不报错</p>
+<p>实战1:输入一个年份判断是否为闰年</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">while 1:</span><br><span class="line">    年份 = eval(input(&quot;请输入一个四位数年份:&quot;))</span><br><span class="line">    if (年份 % 4 == 0 and 年份 % 100 != 0) or (年份 % 400 == 0):</span><br><span class="line">        print(年份, &quot;是闰年&quot;)</span><br><span class="line">    else:</span><br><span class="line">        print(年份, &quot;不是闰年&quot;)</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">请输入一个四位数年份:2000</span><br><span class="line">2000 是闰年</span><br><span class="line">请输入一个四位数年份:1921</span><br><span class="line">1921 不是闰年</span><br><span class="line">请输入一个四位数年份:</span><br></pre></td></tr></table></figure>
+<p>实战2:简易的查询功能,0为退出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">while 1:</span><br><span class="line">    print(&quot;-&quot; * 5, &#x27;欢迎使用查询功能&#x27;, &quot;-&quot; * 5)</span><br><span class="line">    print(&quot;1.查询当前余额&quot;, &quot;\n2.查询当前流量&quot;, &quot;\n3.查询剩余时间&quot;, &quot;\n0.退出系统&quot;)</span><br><span class="line">    功能 = eval(input(&quot;请输入序号:&quot;))</span><br><span class="line">    if 功能 == 1:</span><br><span class="line">        print(&quot;当前余额为123.1元&quot;)</span><br><span class="line">    elif 功能 == 2:</span><br><span class="line">        print(&quot;当前流量剩余231G&quot;)</span><br><span class="line">    elif 功能 == 3:</span><br><span class="line">        print(&quot;当然剩余时间200分钟&quot;)</span><br><span class="line">    elif 功能 == 0:</span><br><span class="line">        break</span><br><span class="line">    else:</span><br><span class="line">        print(&quot;请输入正确的序号&quot;)</span><br><span class="line">        continue</span><br><span class="line">    继续 = input(&quot;还要继续操作么? y/n&quot;)</span><br><span class="line">    if 继续 == &quot;n&quot;:</span><br><span class="line">        break</span><br></pre></td></tr></table></figure>
+<p>实战3:输出一个九九乘法表</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for i in range(1, 10):</span><br><span class="line">    for j in range(1, i + 1):</span><br><span class="line">        print(str(i) + &#x27;*&#x27; + str(j) + &#x27;=&#x27; + str(i * j), end=&quot;\t&quot;)</span><br><span class="line">    print()</span><br></pre></td></tr></table></figure>
+<p>实战4:随机一个数,猜中结束</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import random  # 导入内置函数random,不导入不可用</span><br><span class="line"></span><br><span class="line">数字 = random.randint(0, 100)  # 生成一个在两个参数中间的整数,参数必须为整数</span><br><span class="line">次数 = 0  # 记录使用的次数</span><br><span class="line">while 1:</span><br><span class="line">    输入 = eval(input(&quot;猜猜我是几&quot;))</span><br><span class="line">    if 输入 &gt; 数字:</span><br><span class="line">        print(&quot;大了&quot;)</span><br><span class="line">        次数 += 1</span><br><span class="line">    elif 输入 &lt; 数字:</span><br><span class="line">        print(&quot;小了&quot;)</span><br><span class="line">        次数 += 1</span><br><span class="line">    elif 输入 == 数字:</span><br><span class="line">        print(&quot;恭喜你猜对了,数字为:&quot; + str(数字) + &quot;\n你使用的次数为:&quot; + str(次数))</span><br><span class="line">        break</span><br></pre></td></tr></table></figure>
+<p>实战4;猜拳游戏</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import random  # 导入内置函数random,不导入不可用</span><br><span class="line"></span><br><span class="line">while 1:</span><br><span class="line">    print(&#x27;-&#x27; * 20)  # 标线 区分用</span><br><span class="line">    电脑 = random.randint(1, 3)  # 随机生成1 2 3</span><br><span class="line">    玩家 = eval(input(&quot;1.石头\n2.剪刀\n3.布\n4结束&quot;))</span><br><span class="line">    if 玩家 == 电脑:</span><br><span class="line">        print(&#x27;平局&#x27;)</span><br><span class="line">        print(&#x27;电脑:&#x27; + str(电脑) + &quot;\n玩家:&quot; + str(玩家))</span><br><span class="line">    elif 玩家 == 4:</span><br><span class="line">        break</span><br><span class="line">    elif 电脑 == 1:</span><br><span class="line">        if 玩家 == 2:</span><br><span class="line">            print(&quot;输了&quot;)</span><br><span class="line">            print(&#x27;电脑:&#x27; + str(电脑) + &quot;\n玩家:&quot; + str(玩家))</span><br><span class="line">        else:</span><br><span class="line">            print(&quot;赢了&quot;)</span><br><span class="line">            print(&#x27;电脑:&#x27; + str(电脑) + &quot;\n玩家:&quot; + str(玩家))</span><br><span class="line">    elif 电脑 == 2:</span><br><span class="line">        if 玩家 == 3:</span><br><span class="line">            print(&quot;输了&quot;)</span><br><span class="line">            print(&#x27;电脑:&#x27; + str(电脑) + &quot;\n玩家:&quot; + str(玩家))</span><br><span class="line">        else:</span><br><span class="line">            print(&quot;赢了&quot;)</span><br><span class="line">            print(&#x27;电脑:&#x27; + str(电脑) + &quot;\n玩家:&quot; + str(玩家))</span><br><span class="line">    elif 电脑 == 3:</span><br><span class="line">        if 玩家 == 1:</span><br><span class="line">            print(&quot;输了&quot;)</span><br><span class="line">            print(&#x27;电脑:&#x27; + str(电脑) + &quot;\n玩家:&quot; + str(玩家))</span><br><span class="line">        else:</span><br><span class="line">            print(&quot;赢了&quot;)</span><br><span class="line">            print(&#x27;电脑:&#x27; + str(电脑) + &quot;\n玩家:&quot; + str(玩家))</span><br></pre></td></tr></table></figure>
+<h1 id="2022年6月15日"><a href="#2022年6月15日" class="headerlink" title="2022年6月15日"></a>2022年6月15日</h1><p>程序结构分为三种:<br>顺序结构:按照程序语句的自然顺序,从上到下依次执行<br>选择结构:按照调减选择执行不同的代码<br>循环结构:在一定条件下反复执行某段程序</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a, b = &quot;哈哈&quot;, 12  # 元组解包赋值</span><br><span class="line">print(a, b)</span><br><span class="line">[a, b] = [&quot;haha&quot;, 4]  # 列表分解赋值</span><br><span class="line">print(a, b)</span><br><span class="line">q, w, e, r = &#x27;zxcv&#x27;  # 字符串分解赋值</span><br><span class="line">print(q, w, e, r)</span><br><span class="line">a, *b = &quot;zxcv&quot;  # 扩展的字符串解包赋值</span><br><span class="line">print(a, b)</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">哈哈 12</span><br><span class="line">haha 4</span><br><span class="line">z x c v</span><br><span class="line">z [&#x27;x&#x27;, &#x27;c&#x27;, &#x27;v&#x27;]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>if语句基本用法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a = eval(input(&#x27;请输入一个数字:&#x27;))</span><br><span class="line">if a &lt; 0:</span><br><span class="line">    print(&#x27;a&lt;0&#x27;)</span><br><span class="line">elif a == 0:</span><br><span class="line">    print(&#x27;a=0&#x27;)</span><br><span class="line">elif 100 &gt; a &gt; 0:</span><br><span class="line">    print(&#x27;100&gt;a&gt;0&#x27;)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;a&gt;=100&quot;)</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">请输入一个数字:10</span><br><span class="line">100&gt;a&gt;0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>if语句单句用法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">b = eval(input(&#x27;请输入一个数字&#x27;))</span><br><span class="line">b = &#x27;=10&#x27; if b == 10 else &#x27;/=10&#x27;</span><br><span class="line">print(b)</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">请输入一个数字20</span><br><span class="line">/=10</span><br></pre></td></tr></table></figure>
+<p><code>range</code>函数,产生一个[n,m)的整数序列,不包含m</p>
+<p>for遍历循环</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a = 0</span><br><span class="line">for i in range(1, 101):  # 1到100的和</span><br><span class="line">    a += i</span><br><span class="line">print(a)</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">5050</span><br></pre></td></tr></table></figure>
+<p>水仙花数字,个十百三位数的三次幂相加等于这个数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for i in range(100, 1000):</span><br><span class="line">    a, b, c = i % 10, i // 10 % 10, i // 100  # 获取个十百位数存入abc中</span><br><span class="line">    if a ** 3 + b ** 3 + c ** 3 == i:  # 判断是否为水仙花数字</span><br><span class="line">        print(i)</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">153</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">407</span><br></pre></td></tr></table></figure>
+<p>while无限循环</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a, i = 3, 0</span><br><span class="line">while a:  # 当条件为真时,一直循环    当条件为假时,停止循序</span><br><span class="line">    a -= 1  # 每次循环a-1</span><br><span class="line">    i += 1  # 每次循环计数器加1</span><br><span class="line">    print(a)</span><br><span class="line">print(&#x27;循环结束,循环了&#x27;, i, &#x27;次&#x27;)</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">2</span><br><span class="line">1</span><br><span class="line">0</span><br><span class="line">循环结束,循环了 3 次</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="2022年6月14日"><a href="#2022年6月14日" class="headerlink" title="2022年6月14日"></a>2022年6月14日</h1><p>算数运算符</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">说明</th>
+<th align="center">示例</th>
+<th align="center">结果</th>
+<th align="center">优先级</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">加</td>
+<td align="center">1+1</td>
+<td align="center">2</td>
+<td align="center">底</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">减</td>
+<td align="center">1-1</td>
+<td align="center">0</td>
+<td align="center">底</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">乘</td>
+<td align="center">2*3</td>
+<td align="center">6</td>
+<td align="center">中</td>
+</tr>
+<tr>
+<td align="center">&#x2F;</td>
+<td align="center">除</td>
+<td align="center">10&#x2F;2</td>
+<td align="center">5.0</td>
+<td align="center">中</td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F;</td>
+<td align="center">整除</td>
+<td align="center">10&#x2F;&#x2F;3</td>
+<td align="center">3</td>
+<td align="center">中</td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">取余</td>
+<td align="center">10%3</td>
+<td align="center">1</td>
+<td align="center">中</td>
+</tr>
+<tr>
+<td align="center">**</td>
+<td align="center">幂运算</td>
+<td align="center">2**4</td>
+<td align="center">16</td>
+<td align="center">高</td>
+</tr>
+</tbody></table>
+<p>赋值运算符</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">说明</th>
+<th align="center">示例</th>
+<th align="center">展开形式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+&#x3D;</td>
+<td align="center">加赋值</td>
+<td align="center">x+&#x3D;y</td>
+<td align="center">x&#x3D;x+y</td>
+</tr>
+<tr>
+<td align="center">-&#x3D;</td>
+<td align="center">减赋值</td>
+<td align="center">x-&#x3D;y</td>
+<td align="center">x&#x3D;x-y</td>
+</tr>
+<tr>
+<td align="center">* &#x3D;</td>
+<td align="center">乘赋值</td>
+<td align="center">x*&#x3D;y</td>
+<td align="center">x&#x3D;x*y</td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x3D;</td>
+<td align="center">除赋值</td>
+<td align="center">x&#x2F;&#x3D;y</td>
+<td align="center">x&#x3D;x&#x2F;y</td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F;&#x3D;</td>
+<td align="center">整除赋值</td>
+<td align="center">x&#x2F;&#x2F;&#x3D;y</td>
+<td align="center">x&#x3D;x&#x2F;&#x2F;y</td>
+</tr>
+<tr>
+<td align="center">%&#x3D;</td>
+<td align="center">取余赋值</td>
+<td align="center">x%&#x3D;y</td>
+<td align="center">x&#x3D;x%y</td>
+</tr>
+<tr>
+<td align="center">** &#x3D;</td>
+<td align="center">幂赋值</td>
+<td align="center">x ** &#x3D;y</td>
+<td align="center">x&#x3D;xy</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a = b = c = 1  # 链式赋值</span><br><span class="line">print(&quot;a=&quot;, a, &quot;b=&quot;, b, &quot;c=&quot;, c)</span><br><span class="line">a, b, c = 1, 2, 3  # 系列解包赋值</span><br><span class="line">print(&quot;a=&quot;, a, &quot;b=&quot;, b, &quot;c=&quot;, c)</span><br><span class="line">a, b, c = b, c, a  # 变量交换,不需要第三方变量</span><br><span class="line">print(&quot;a=&quot;, a, &quot;b=&quot;, b, &quot;c=&quot;, c)</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">a= 1 b= 1 c= 1</span><br><span class="line">a= 1 b= 2 c= 3</span><br><span class="line">a= 2 b= 3 c= 1</span><br></pre></td></tr></table></figure>
+<p>逻辑运算符</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">含义</th>
+<th align="center">用法</th>
+<th align="center">结合方向</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">and</td>
+<td align="center">与</td>
+<td align="center">表达式1 and 表达式2</td>
+<td align="center">从左到右</td>
+<td align="center">全部为真时为真</td>
+</tr>
+<tr>
+<td align="center">or</td>
+<td align="center">或</td>
+<td align="center">表达式1 or 表达式2</td>
+<td align="center">从左到右</td>
+<td align="center">有一个为真时为真</td>
+</tr>
+<tr>
+<td align="center">not</td>
+<td align="center">非</td>
+<td align="center">not 表达式</td>
+<td align="center">从右到左</td>
+<td align="center">对结果取反</td>
+</tr>
+</tbody></table>
+<p>位运算符,将表达式转换为二进制,然后按位一次运算</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">含义</th>
+<th align="center">用法</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&amp;</td>
+<td align="center">位与</td>
+<td align="center">表达式1 &amp; 表达式2</td>
+<td align="center">都是1时为1</td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td align="center">位或</td>
+<td align="center">表达式1 | 表达式2</td>
+<td align="center">都是0时为0</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="center">位异或</td>
+<td align="center">表达式1 ^ 表达式2</td>
+<td align="center">相同时为0,不同时为1</td>
+</tr>
+<tr>
+<td align="center">~</td>
+<td align="center">位取反</td>
+<td align="center">not 表达式</td>
+<td align="center">对表达式取反</td>
+</tr>
+<tr>
+<td align="center">&lt;&lt;</td>
+<td align="center">位左移</td>
+<td align="center">表达式1 &lt;&lt; 位数</td>
+<td align="center">溢出丢弃,空位0补</td>
+</tr>
+<tr>
+<td align="center">&gt;&gt;</td>
+<td align="center">位右移</td>
+<td align="center">表达式1 &gt;&gt; 位数</td>
+<td align="center">溢出丢弃,空位0补</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">print(12 &amp; 8)  # 位与运算</span><br><span class="line">print(12 | 8)  # 位或运算</span><br><span class="line">print(12 ^ 8)  # 位异与运算</span><br><span class="line">print(~8)  # 取反运算</span><br><span class="line">a = 4</span><br><span class="line">print(&#x27;左移&#x27;, a &lt;&lt; 2)  # 将a左移2位</span><br><span class="line">print(&#x27;右移&#x27;, a &gt;&gt; 2)  # 将a右移2位</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">8</span><br><span class="line">12</span><br><span class="line">4</span><br><span class="line">-9</span><br><span class="line">左移 16</span><br><span class="line">右移 1</span><br></pre></td></tr></table></figure>
+
+<h1 id="2022年6月7日"><a href="#2022年6月7日" class="headerlink" title="2022年6月7日"></a>2022年6月7日</h1><p>字符串索引和切片</p>
+<p>正向递增序号:第一位是0,向后依次递增<br>反向递减序号:最后一位是-1,向前一次递减</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">s = &#x27;0123456789&#x27;</span><br><span class="line">print(&#x27;正向:&#x27;, s[0], s[9])  # 变量名后面跟着中括号里面填序号</span><br><span class="line">print(&#x27;反向:&#x27;, s[-10], s[-1])  # 根据序号的正负自动判断正向还是反向</span><br><span class="line">print(&#x27;你好世界&#x27;[2])  # 也可以直接在一个字符串后面跟着索引</span><br><span class="line">print(&#x27;切片:&#x27;, s[2:7])  # 切片,从2到7,不包含7</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">正向: 0 9</span><br><span class="line">反向: 0 9</span><br><span class="line">世</span><br><span class="line">切片: 23456</span><br></pre></td></tr></table></figure>
+<p>字符串的操作</p>
+<table>
+<thead>
+<tr>
+<th align="center">操作符</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">x+y</td>
+<td align="center">连接字符串x和y</td>
+</tr>
+<tr>
+<td align="center">x*n</td>
+<td align="center">复制n次字符串</td>
+</tr>
+<tr>
+<td align="center">x in s</td>
+<td align="center">如果x是s的子字符串,结果为T,否则为F</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">x = &#x27;123&#x27;</span><br><span class="line">y = &#x27;456&#x27;</span><br><span class="line">n = &#x27;123654&#x27;</span><br><span class="line">print(x + y)</span><br><span class="line">print(x * 3)</span><br><span class="line">print(x in n)</span><br><span class="line">print(y in n)</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">123456</span><br><span class="line">123123123</span><br><span class="line">True</span><br><span class="line">False</span><br></pre></td></tr></table></figure>
+<p> 布尔值<br>True和False<br>所有对象都有布尔值,利用<code>bool()</code>进行测试</p>
+<table>
+<thead>
+<tr>
+<th align="center">布尔值为假的情况</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">False或None</td>
+</tr>
+<tr>
+<td align="center">数值里的0,包含0,0.0,虚数0</td>
+</tr>
+<tr>
+<td align="center">自定义对象的实例,该对象的<code>_bool_()</code>方法返回False或<code>_len_()</code>返回0</td>
+</tr>
+</tbody></table>
+<p>数据类型转换</p>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">int(x)</td>
+<td align="center">将x转换为整数类型</td>
+</tr>
+<tr>
+<td align="center">float(x)</td>
+<td align="center">将x转换为浮点数类型</td>
+</tr>
+<tr>
+<td align="center">str(x)</td>
+<td align="center">将x转换为字符串</td>
+</tr>
+<tr>
+<td align="center">chr(x)</td>
+<td align="center">将整数x转换为一个字符</td>
+</tr>
+<tr>
+<td align="center">ord(x)</td>
+<td align="center">将一个字符x转换为其对应的整数值</td>
+</tr>
+<tr>
+<td align="center">hex(x)</td>
+<td align="center">将一个整数x转换为一个十六进制字符串</td>
+</tr>
+<tr>
+<td align="center">oct(x)</td>
+<td align="center">将一个整数x转换为一个八进制字符串</td>
+</tr>
+<tr>
+<td align="center">bin(x)</td>
+<td align="center">将一个整数x转换为一个二进制字符串</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">x = 123</span><br><span class="line">q = 65</span><br><span class="line">y = 2.0</span><br><span class="line">z = &quot;z&quot;</span><br><span class="line">print(x, type(x), &#x27;\n&#x27;, y, type(y), &#x27;\n&#x27;, z, type(z))  # 查看初始类型</span><br><span class="line">print(int(y), type(int(y)))  # 浮点数转整数</span><br><span class="line">print(float(x), type(float(x)))  # 整数转浮点数</span><br><span class="line">print(str(x), type(str(x)))  # 整数转字符串</span><br><span class="line">print(chr(q), type(chr(q)))  # 整数转字符</span><br><span class="line">print(ord(z), type(ord(z)))  # 字符转整数</span><br><span class="line">print(hex(x), type(hex(x)))  # 十六进制</span><br><span class="line">print(oct(x), type(oct(x)))  # 八进制</span><br><span class="line">print(bin(x), type(bin(x)))  # 二进制</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">123 &lt;class &#x27;int&#x27;&gt; </span><br><span class="line"> 2.0 &lt;class &#x27;float&#x27;&gt; </span><br><span class="line"> z &lt;class &#x27;str&#x27;&gt;</span><br><span class="line">2 &lt;class &#x27;int&#x27;&gt;</span><br><span class="line">123.0 &lt;class &#x27;float&#x27;&gt;</span><br><span class="line">123 &lt;class &#x27;str&#x27;&gt;</span><br><span class="line">A &lt;class &#x27;str&#x27;&gt;</span><br><span class="line">122 &lt;class &#x27;int&#x27;&gt;</span><br><span class="line">0x7b &lt;class &#x27;str&#x27;&gt;</span><br><span class="line">0o173 &lt;class &#x27;str&#x27;&gt;</span><br><span class="line">0b1111011 &lt;class &#x27;str&#x27;&gt;</span><br></pre></td></tr></table></figure>
+<p> eval()<br>将括号内的表达式求值(去掉引号后运算)<br>经常和<code>input()</code>一起使用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">x = 2</span><br><span class="line">print((eval(&quot;2*x&quot;)))</span><br><span class="line">a = eval(input(&quot;请输入数字:&quot;))  # 输入数字和运算符以外的会报错</span><br><span class="line">print(a)</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">4</span><br><span class="line">请输入数字:1.2+3</span><br><span class="line">4.2</span><br></pre></td></tr></table></figure>
+<h1 id="2022年5月28日"><a href="#2022年5月28日" class="headerlink" title="2022年5月28日"></a>2022年5月28日</h1><p>进制前缀</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">数字_1 = 123  # 十进制</span><br><span class="line">数字_2 = 0b101010  # 二进制前缀0b</span><br><span class="line">数字_3 = 0o123  # 八进制前缀0o</span><br><span class="line">数字_4 = 0x123  # 十六进制前缀0x</span><br><span class="line">print(数字_1, 数字_2, 数字_3, 数字_4)  # 输出数字</span><br><span class="line">print(type(数字_1), type(数字_2), type(数字_3), type(数字_4))  # 输出变量类型</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">123 42 83 291</span><br><span class="line">&lt;class &#x27;int&#x27;&gt; &lt;class &#x27;int&#x27;&gt; &lt;class &#x27;int&#x27;&gt; &lt;class &#x27;int&#x27;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>浮点数运算会产生不定尾数,可以用 <code>round(*args, **kwargs)</code>函数来限定小数点位数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">print(0.1 + 0.2)  # 浮点数运算</span><br><span class="line">print(round(0.1 + 0.2, 3))  # 逗号后面是需要的位数,只保留有效位数</span><br><span class="line">print(round(0.13 + 0.13, 1))  # 运算结果会四舍五入,但并不精确</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">0.30000000000000004</span><br><span class="line">0.3</span><br><span class="line">0.4</span><br></pre></td></tr></table></figure>
+
+<p>复数类型 和数学中的复数一致,分为实数和虚数,虚数添加<code>j</code>来表示</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">复数 = 123 + 456j</span><br><span class="line">print(&#x27;实数部分:&#x27;, 复数.real)  # .real获取实数部分</span><br><span class="line">print(&#x27;虚数部分:&#x27;, 复数.imag)  # .imag获取虚数部分</span><br><span class="line">测试 = 复数.imag + 复数.real</span><br><span class="line">print(测试)</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">实数部分: 123.0</span><br><span class="line">虚数部分: 456.0</span><br><span class="line">579.0</span><br></pre></td></tr></table></figure>
+
+<p>单行字符串</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">单行字符串 = &#x27;你好&#x27; \</span><br><span class="line">        &#x27;哈&#x27;  # 用一个引号表示,不管信息多少只有一行</span><br><span class="line">print(&#x27;单行字符串:&#x27;, 单行字符串)</span><br><span class="line">单行字符串_2 = &#x27;你好\n哈哈&#x27;  # 单行字符串中也可以添加换行符 \n 来实现多行效果</span><br><span class="line">print(&#x27;单行字符串_2:&#x27;, 单行字符串_2)</span><br><span class="line">多行字符串 = &#x27;&#x27;&#x27;你好 </span><br><span class="line">哈哈哈&#x27;&#x27;&#x27;  # 用三个引号表示,可以显示多行信息</span><br><span class="line">print(&#x27;多行字符串:&#x27;, 多行字符串)</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">单行字符串: 你好哈</span><br><span class="line">单行字符串_2: 你好</span><br><span class="line">哈哈</span><br><span class="line">多行字符串: 你好 </span><br><span class="line">哈哈哈</span><br></pre></td></tr></table></figure>
+
+<p>转义字符,反斜杠<code>\</code>后面添加其他字符组成新的含义</p>
+<table>
+<thead>
+<tr>
+<th align="center">转义字符</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\n</td>
+<td align="center">换行符</td>
+</tr>
+<tr>
+<td align="center">\t</td>
+<td align="center">水平制表位,占八个空格</td>
+</tr>
+<tr>
+<td align="center">\‘</td>
+<td align="center">单引号</td>
+</tr>
+<tr>
+<td align="center">\“</td>
+<td align="center">双引号</td>
+</tr>
+<tr>
+<td align="center">\\</td>
+<td align="center">反斜杠</td>
+</tr>
+</tbody></table>
+<p>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">print(&quot;哈\n哈&quot;)  #换行</span><br><span class="line">print(&quot;哈\t哈&quot;)  #水平制表位</span><br><span class="line">print(&quot;哈\&#x27;哈&quot;)  #单引号</span><br><span class="line">print(&quot;哈\&quot;哈&quot;)	#双引号</span><br><span class="line">print(&quot;哈\\哈&quot;)	#反斜杠</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">哈</span><br><span class="line">哈</span><br><span class="line">哈	哈</span><br><span class="line">哈&#x27;哈</span><br><span class="line">哈&quot;哈</span><br><span class="line">哈\哈</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="2022年5月27日"><a href="#2022年5月27日" class="headerlink" title="2022年5月27日"></a>2022年5月27日</h1><p>用print输出到文件,文件保存在项目目录里</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fp = open(&quot;文件.txt&quot;, &quot;w&quot;)  # fp是变量名;打开文件 w--&gt;write</span><br><span class="line">print(&quot;测试&quot;,file=fp) #输出到文件中</span><br><span class="line">fp.close() #关闭文件 </span><br></pre></td></tr></table></figure>
+
+<p>print的其他输出格式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">print(&#x27;测试&#x27;,end=&quot;---&quot;)#函数结尾默认换行符 \n,可替换成其他的</span><br><span class="line">print(&#x27;测试&#x27;,1,2,3,sep=&quot;.&quot;)#逗号链接默认用空格,可改</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">测试---测试.1.2.3</span><br></pre></td></tr></table></figure>
+
+<p>input的使用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">名字=input(&quot;请输入姓名:&quot;) #括号内的是提示文字</span><br><span class="line">print(&quot;你的名字是:&quot;+名字) #输入的格式默认为字符串型</span><br><span class="line">数字=int(input(&quot;输入数字:&quot;)) #将输入的字符串转换为整数类型</span><br><span class="line">print(数字+3)</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">请输入姓名:哈哈</span><br><span class="line">你的名字是:哈哈</span><br><span class="line">输入数字:3</span><br><span class="line">6</span><br></pre></td></tr></table></figure>
+
+<p>当代码不齐,比如少了空格的时候,可以使用组合键 <code>Ctrl+Alt+L</code>来快速自动对齐</p>
+<h1 id="2022年5月19日"><a href="#2022年5月19日" class="headerlink" title="2022年5月19日"></a>2022年5月19日</h1><p>pyhhon的“规矩”非常少，上手极为简单，正因如此，在学习过其他语言比如C++后再来学习这个，会有一定程度上的麻烦。</p>
+<p>基础的函数   打印 <code>print(&quot;内容&quot;)</code>  输如 <code>input(&quot;提示&quot;)</code></p>
+<p>变量名可以用中文，不可以用数字和下划线开头，区分大小写</p>
+<p>分支结构 </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件：</span><br><span class="line">	<span class="comment">#可执行程序</span></span><br><span class="line"><span class="keyword">elif</span> 条件：</span><br><span class="line">	<span class="comment">#可执行程序</span></span><br><span class="line"><span class="keyword">else</span> ：</span><br><span class="line">	<span class="comment">#可执行程序</span></span><br></pre></td></tr></table></figure>
+
+<p>快速运算符 </p>
+<table>
+<thead>
+<tr>
+<th align="center">简写</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">x +&#x3D; 2</td>
+<td align="center">x &#x3D; x+2</td>
+</tr>
+<tr>
+<td align="center">x *&#x3D; 2</td>
+<td align="center">x &#x3D; x*2</td>
+</tr>
+<tr>
+<td align="center">x % y</td>
+<td align="center">求x&#x2F;y的余数</td>
+</tr>
+<tr>
+<td align="center">x &#x2F;&#x2F; y</td>
+<td align="center">求 x&#x2F;y的商</td>
+</tr>
+<tr>
+<td align="center">x ** y</td>
+<td align="center">x的y次幂</td>
+</tr>
+</tbody></table>
+<p>字符串需要用  <code>&quot;&quot;</code>或者 <code>&#39;&#39;</code>标起来。如果字符串内用到 <code>&quot;&quot;</code>，那字符串就用 <code>&#39;&#39;</code>标记，如果字符串内两个都用到了， 用 <code>&quot;&#39;&#39;&quot;</code>三引号标记</p>
+]]></content>
+      <categories>
+        <category>学习日记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo的部署</title>
+    <url>/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>博客，可以看做一个放在网上的日记本，你可以随意的设计属于你的博客。创建博客并不难，其大部分时间全是在等待上（毕竟是国外网站）。这一篇讲的是如何在Github上部署Hexo博客，仅适用于Windows系统。</p>
+<h1 id="二、准备"><a href="#二、准备" class="headerlink" title="二、准备"></a>二、准备</h1><p>nodejs 下载地址： <a href="http://nodejs.cn/download/">http://nodejs.cn/download/</a></p>
+<p>Git        下载地址：<a href="https://git-scm.com/">https://git-scm.com/</a></p>
+<p>Sublime Text  （这个不是必备的） 下载地址：<a href="http://www.sublimetext.com/">http://www.sublimetext.com/</a></p>
+<p>你可以去官网下载最新版，也可以从这里下载我使用的  链接: <a href="https://pan.baidu.com/s/1VGqk4-pfD-0Efn0zGmHePw?pwd=uv1e">https://pan.baidu.com/s/1VGqk4-pfD-0Efn0zGmHePw?pwd=uv1e</a> 提取码: uv1e </p>
+<h1 id="三、安装"><a href="#三、安装" class="headerlink" title="三、安装"></a>三、安装</h1><p>Nodejs，Git 直接运行安装包即可，注意安装路径</p>
+<h2 id="1-安装cnpm"><a href="#1-安装cnpm" class="headerlink" title="1.安装cnpm"></a>1.安装cnpm</h2><p>Nodejs，Git 安装好后直接在桌面右键，选择<code>Git Bash Here</code></p>
+<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E5%8F%B3%E9%94%AE.png"></p>
+<p>在Git Bash里面执行下面的命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-验证"><a href="#2-验证" class="headerlink" title="2.验证"></a>2.验证</h2><p>Nodejs，Git，Sublime Text安装好后验证</p>
+<p>直接在桌面右键，选择Git Bash Here</p>
+<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E5%8F%B3%E9%94%AE.png"></p>
+<p>依次输入 <code>node -v </code>，<code> npm -v</code>，<code>cnpm -v</code></p>
+<p>显示出版本号证明安装成功</p>
+<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/%E7%89%88%E6%9C%AC%E5%8F%B7.png"></p>
+<h2 id="3-安装并初始化hexo"><a href="#3-安装并初始化hexo" class="headerlink" title="3.安装并初始化hexo"></a>3.安装并初始化hexo</h2><p>选择一个你喜欢的文件夹当做博客的根目录，在里面右键打开Git Bash</p>
+<p>比如我选择的是D盘的blog文件</p>
+<p>这里会显示你当前的目录</p>
+<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516163807910.png"></p>
+<p>执行这个命令来安装Hexo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<p>完成后执行 <code>hexo init</code></p>
+<p>等这个命令执行完毕后，再执行 <code>hexo s</code></p>
+<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516164249077.png" alt="image-20220516164249077"></p>
+<p>出现这个界面后打开http开头4000结尾的网址</p>
+<p>就能看见再本地初始化后的Hexo博客了</p>
+<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516164436938.png" alt="image-20220516164436938"></p>
+<p>注：截图会与你的实际界面有出入，应为这是我修改配置后的界面</p>
+<p>到这里你只能在自己的电脑上浏览博客，接下来就是在其他设备上也能看到</p>
+<h1 id="四、部署"><a href="#四、部署" class="headerlink" title="四、部署"></a>四、部署</h1><p>你有两个选择</p>
+<p>一是国外的github平台，全英文的，浏览速度较慢，可自定义域名，不需要实名认证</p>
+<p>二是国内的coding平台，全中文的，浏览速度快，域名是随机的，需要实名认证</p>
+<p>因为我用的是github平台，所以只介绍部署在github上的方法。</p>
+<h2 id="1-注册"><a href="#1-注册" class="headerlink" title="1.注册"></a>1.注册</h2><p><a href="https://github.com/">GitHub：世界构建软件的地方 ·GitHub</a></p>
+<p>注册过程就不教了，看不懂的开翻译就行</p>
+<h2 id="2-创建仓库"><a href="#2-创建仓库" class="headerlink" title="2.创建仓库"></a>2.创建仓库</h2><p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516171151610.png" alt="image-20220516171151610"></p>
+<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516171457192.png" alt="image-20220516171457192"></p>
+<p>仓库名那里结尾必须添加 <code>github.io</code></p>
+<p>比如我的就是 <code>yrmkye.github.io</code></p>
+<h2 id="3-秘钥"><a href="#3-秘钥" class="headerlink" title="3.秘钥"></a>3.秘钥</h2><p>打开Git Bash 执行命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C “你的邮箱“</span><br></pre></td></tr></table></figure>
+
+<p>把汉字换成你的邮箱地址，比如我执行的就是</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C “beilun13@hotmail.com“</span><br></pre></td></tr></table></figure>
+
+<p>不管出现什么信息，按回车就行</p>
+<p>结束后执行 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>会出现一大串字符，那就是你的秘钥，复制下来保存好</p>
+<p>回到github点击你的头像选择Settings</p>
+<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516172302010.png" alt="image-20220516172302010"></p>
+<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516172424559.png" alt="image-20220516172424559"></p>
+<p>然后再在Git Bash里执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>出现下面的提示，输入yes后回车就行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Are you sure you want to continue connecting (yes/no/[fingerprint])? </span><br></pre></td></tr></table></figure>
+
+<h2 id="4-上传"><a href="#4-上传" class="headerlink" title="4.上传"></a>4.上传</h2><p>回到github，设置里面修改，把main修改为master</p>
+<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516173637917.png" alt="image-20220516173637917"></p>
+<p>打开你的仓库，复制git开头的地址</p>
+<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516173947872.png" alt="image-20220516173947872"></p>
+<p>打开你保存站点的文件夹里的 <code>_config.yml</code></p>
+<p><img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516173400462.png" alt="image-20220516173400462"></p>
+<p>在开头找到并修改</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">url: https://你的仓库名/blog</span><br><span class="line">root: /blog</span><br></pre></td></tr></table></figure>
+
+<p>例如：<img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516174443121.png" alt="image-20220516174443121"></p>
+<p>在下面找到并修改</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: 你复制的地址</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>例如：<img src="/2022/05/16/hexo%E7%9A%84%E9%83%A8%E7%BD%B2/image-20220516174238622.png" alt="image-20220516174238622"></p>
+<p>修改好后保存退出</p>
+<p>在你的博客根目录里打开Git Bash</p>
+<p>依次执行命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的名字&quot;</span><br><span class="line">git config --global user.email &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<p>注意把汉字改掉</p>
+<p>然后执行命令，安装上传插件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>安装完毕后执行命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure>
+
+<p>我个人建议分开执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo cl</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>每次修改完博客后执行者这三条指令就能上传到github了</p>
+<p>你的仓库名就是你的博客地址，例如我的就是 <code>yrmkye.github.io</code></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>更新日志</title>
+    <url>/2022/05/16/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</url>
+    <content><![CDATA[<h6 id="2022年5月16日21-55-21"><a href="#2022年5月16日21-55-21" class="headerlink" title="2022年5月16日21:55:21"></a>2022年5月16日21:55:21</h6><p>添加了github主页的跳转</p>
+<p>页面顶部添加了阅读进度条</p>
+<p>删除了不必要的评论区</p>
+<h6 id="2022年5月16日21-13-38"><a href="#2022年5月16日21-13-38" class="headerlink" title="2022年5月16日21:13:38"></a>2022年5月16日21:13:38</h6><p>添加了分类，移除了标签</p>
+<p>添加了计数器</p>
+<h6 id="2022年5月16日20-36-22"><a href="#2022年5月16日20-36-22" class="headerlink" title="2022年5月16日20:36:22"></a>2022年5月16日20:36:22</h6><p>添加了搜索功能</p>
+<p>添加 了评论功能  </p>
+]]></content>
+      <categories>
+        <category>博客日志</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>题库及算法</title>
+    <url>/2022/11/27/%E9%A2%98%E5%BA%93%E5%8F%8A%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>代码不唯一,不一定最优,不一定正确,有问题及时联系我更正.</p>
+<h1 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h1><h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>求出 1000以内所有不能被8和6整除的偶数和。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> P 1000</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; P; i++) </span><br><span class="line">		<span class="keyword">if</span> (i % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">if</span> (i % <span class="number">8</span> != <span class="number">0</span> &amp;&amp; i % <span class="number">6</span> != <span class="number">0</span>)</span><br><span class="line">				sum += i;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, sum);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><p>从键盘接收用户输入的 10 个整数，对该 10 个整数进行升序排序并输出。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> P 10</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> num[P] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; P; i++) scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;num[i]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; P - <span class="number">1</span>; i++) </span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; P - <span class="number">1</span> - i; j++) </span><br><span class="line">			<span class="keyword">if</span> (num[j] &gt; num[j + <span class="number">1</span>]) &#123;</span><br><span class="line">				<span class="type">int</span> t = num[j];</span><br><span class="line">				num[j] = num[j + <span class="number">1</span>];</span><br><span class="line">				num[j + <span class="number">1</span>] = t;</span><br><span class="line">			&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; P; i++) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, num[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="-2"><a href="#-2" class="headerlink" title=""></a></h2><p>请你找到最小的整数X 同时满足: X是 2019 的整倍数;x 的每一位数字都是奇数。编程求出X。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> P 2019</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="comment">//请你找到最小的整数X 同时满足:</span></span><br><span class="line">	<span class="comment">//X是 2019 的整倍数;x 的每一位数字都是奇数。</span></span><br><span class="line">	<span class="comment">//	编程求出X。</span></span><br><span class="line">	<span class="type">int</span> i = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">		<span class="type">int</span> x = i*P;</span><br><span class="line">		<span class="type">int</span> isThis = <span class="number">1</span>;<span class="comment">//假设这个数满足要求</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j=x;j!=<span class="number">0</span>;j/=<span class="number">10</span>) &#123;</span><br><span class="line">			<span class="type">int</span> t = j % <span class="number">10</span>;</span><br><span class="line">			<span class="keyword">if</span> (t % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">				isThis = <span class="number">0</span>;<span class="comment">//若有一个偶数,则不是</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (isThis) &#123;<span class="comment">//是这个数,输出并推出循环</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, x);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		i++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="-3"><a href="#-3" class="headerlink" title=""></a></h2><p>n个人的编号是 1~n，如果他们依编号按顺时针排成一个圆圈，从编号是 1的人开始顺时针报数。(报数是从 1 报起)当报到 k 的时候，这个人就退出游戏圈。下一个人重新从 1开始报数。求最后剩下的人的编号。这就是著名的约瑟夫环问题。编程求出当 n&#x3D;10,k&#x3D;3 时，最后剩下的人的编号。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> P 10</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> K 3</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="type">int</span> n[P] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="type">int</span> is1=P;</span><br><span class="line">	<span class="type">int</span> cot = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (is1!=<span class="number">1</span>) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; P; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (n[i] == <span class="number">0</span>)cot++;</span><br><span class="line">			<span class="keyword">if</span> (cot == K) &#123;</span><br><span class="line">				n[i] = <span class="number">1</span>;</span><br><span class="line">				cot = <span class="number">0</span>;	</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		is1 = P;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; P; i++) <span class="keyword">if</span> (n[i] == <span class="number">1</span>)	is1--;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; P; i++) <span class="keyword">if</span> (n[i] == <span class="number">0</span>)<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, i+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="-4"><a href="#-4" class="headerlink" title=""></a></h2><p>给定一个公元纪年的年份，输出这一年的天干地支年份。如:输入 2020，输出庚子。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="type">char</span> tmgj[<span class="number">10</span>][<span class="number">4</span>] = &#123;<span class="string">&quot;庚&quot;</span>,<span class="string">&quot;辛&quot;</span>,<span class="string">&quot;壬&quot;</span>,<span class="string">&quot;葵&quot;</span>,<span class="string">&quot;甲&quot;</span>,<span class="string">&quot;乙&quot;</span>,<span class="string">&quot;丙&quot;</span>,<span class="string">&quot;丁&quot;</span>,<span class="string">&quot;戊&quot;</span>,<span class="string">&quot;己&quot;</span>&#125;;</span><br><span class="line">	<span class="type">char</span> divi[<span class="number">12</span>][<span class="number">4</span>] = &#123;<span class="string">&quot;申&quot;</span>,<span class="string">&quot;酉&quot;</span>,<span class="string">&quot;戌&quot;</span>,<span class="string">&quot;亥&quot;</span>,<span class="string">&quot;子&quot;</span>,<span class="string">&quot;丑&quot;</span>,<span class="string">&quot;寅&quot;</span>,<span class="string">&quot;卯&quot;</span>,<span class="string">&quot;辰&quot;</span>,<span class="string">&quot;巳&quot;</span>,<span class="string">&quot;午&quot;</span>,<span class="string">&quot;未&quot;</span>&#125;;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s%s&quot;</span>, tmgj[x % <span class="number">10</span>], divi[x % <span class="number">12</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="-5"><a href="#-5" class="headerlink" title=""></a></h2><p>汉诺塔</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">double</span> <span class="title function_">M1</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">pow</span>(<span class="number">2</span>, x) - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">double</span> <span class="title function_">M2</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (x == <span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">pow</span>(<span class="number">2</span>,x<span class="number">-1</span>) + M2(x - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;x);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;方法一:%.0f\n&quot;</span>, M1(x));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;方法二:%.0f&quot;</span>, M2(x));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="-6"><a href="#-6" class="headerlink" title=""></a></h2><p>今天是2022年的第几天</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> yt[<span class="number">13</span>] = &#123; <span class="number">0</span>,<span class="number">31</span>,<span class="number">28</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">30</span>,<span class="number">31</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">day</span><span class="params">(<span class="type">int</span> y)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (y == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">		<span class="keyword">return</span> yt[y<span class="number">-1</span>] + day(y<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> s = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> y=<span class="number">0</span>, r=<span class="number">0</span>;</span><br><span class="line">	scanf_s(<span class="string">&quot;%d %d&quot;</span>, &amp;y, &amp;r);<span class="comment">//依次输入月和日,用空格隔开</span></span><br><span class="line">	<span class="keyword">if</span> (y &gt; <span class="number">0</span> &amp;&amp; y &lt; <span class="number">13</span> &amp;&amp; r&gt;<span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (yt[y] &gt;= r) &#123;</span><br><span class="line">			s = day(y)+r;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d月%d日是2022年的第%d天&quot;</span>, y, r, s);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="-7"><a href="#-7" class="headerlink" title=""></a></h2><p>输出杨辉三角的指定行</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">sj</span><span class="params">(<span class="type">int</span> h, <span class="type">int</span> j)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (j == <span class="number">1</span>||j==h||h==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> sj(h - <span class="number">1</span>,j<span class="number">-1</span>)+sj(h<span class="number">-1</span>,j);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> h = <span class="number">0</span>;</span><br><span class="line">	scanf_s(<span class="string">&quot;%d&quot;</span>, &amp;h);<span class="comment">//输入指定的行数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= h; j++)</span><br><span class="line">		 <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, sj(h, j));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="-8"><a href="#-8" class="headerlink" title=""></a></h2><p>给定三个六面的骰子,随机投掷,其中两个骰子点数之和为第三个骰子点数的概率为多少,用最简分式表示</p>
+<p>根据题意找出规律课推广到三个任意面的骰子</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> N  6 <span class="comment">//骰子的面数</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">yt</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;<span class="comment">//辗转相除法求最大公约数</span></span><br><span class="line">	<span class="keyword">if</span> (a % b == <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> b;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> yt(b, a % b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">	<span class="type">int</span> fm = <span class="built_in">pow</span>(N, <span class="number">3</span>);<span class="comment">//骰子一共会出现的所有组合数,N*N*N</span></span><br><span class="line">	<span class="type">int</span> fz = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//当骰子为5面时,符合要求的组合数量为(1+2+3+4)*3=(5+5)*3=30</span></span><br><span class="line">	<span class="comment">//当骰子为6面时,符合要求的组合数量为(1+2+3+4+5)*3=(6+6+3)*3=45</span></span><br><span class="line">	<span class="comment">//当骰子为7面时,符合要求的组合数量为(1+2+3+4+5+6)*3=(7+7+7)*3=63</span></span><br><span class="line">	<span class="comment">//当骰子为8面时,符合要求的组合数量为(1+2+3+4+5+6+7)*3=(8+8+8+4)*3=84</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; N ; i++) &#123;</span><br><span class="line">		fz = fz + (i * <span class="number">3</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> y = yt(fm, fz);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d/%d&quot;</span>, fz/y, fm/y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="冒泡算法-排序"><a href="#冒泡算法-排序" class="headerlink" title="冒泡算法(排序)"></a>冒泡算法(排序)</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> P 10</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="type">int</span> num[P] = &#123; <span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">24</span> &#125;;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;P<span class="number">-1</span>;i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;P<span class="number">-1</span>-i;j++)</span><br><span class="line">			<span class="keyword">if</span> (num[j] &lt; num[j + <span class="number">1</span>]) &#123;<span class="comment">//控制从小到大还是从大到小</span></span><br><span class="line">				<span class="type">int</span> t = num[j];</span><br><span class="line">				num[j] = num[j + <span class="number">1</span>];</span><br><span class="line">				num[j + <span class="number">1</span>] = t;</span><br><span class="line">			&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; P; i++)<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, num[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="欧拉筛-素数"><a href="#欧拉筛-素数" class="headerlink" title="欧拉筛(素数)"></a>欧拉筛(素数)</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> N 100<span class="comment">//范围</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> P 25<span class="comment">//个数</span></span></span><br><span class="line"><span class="comment">//一百内有25个素数,则素数盒子长度最少为25</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="type">int</span> Prime[P] = &#123; <span class="number">0</span> &#125;;<span class="comment">//存放P个素数</span></span><br><span class="line">	<span class="type">int</span> isPrime[N] = &#123;<span class="number">0</span>&#125;;<span class="comment">//素数筛的范围</span></span><br><span class="line">	<span class="type">int</span> cot = <span class="number">0</span>;<span class="comment">//记录找到了多少个素数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt; N; i++) &#123;<span class="comment">//从2到N-1</span></span><br><span class="line">		<span class="keyword">if</span> (!isPrime[i]) &#123;<span class="comment">//如果i是素数,就把i存入Prime</span></span><br><span class="line">			Prime[cot] = i;</span><br><span class="line">			cot++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; cot &amp;&amp; Prime[j]*i  &lt; N;j++) &#123;<span class="comment">//Prime[j]*i&lt;N 确保在范围N内</span></span><br><span class="line"> 			isPrime[i * Prime[j]] = <span class="number">1</span>;<span class="comment">//将已找到的素数的i倍数筛掉</span></span><br><span class="line">			<span class="keyword">if</span> (i % Prime[j] == <span class="number">0</span>)<span class="keyword">break</span>;<span class="comment">//如果i能被已有的素数整除,说明已经被筛过,就跳过不再筛</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; cot; i++) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, Prime[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>第一篇博客</title>
+    <url>/2022/05/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>花了四五个小时终于部署好了博客，这里会记录我的学习过程，等下会将hexo的部署过程发上来</p>
+]]></content>
+      <categories>
+        <category>日志</category>
+      </categories>
+  </entry>
+</search>
